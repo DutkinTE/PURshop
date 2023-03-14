@@ -219,24 +219,24 @@ class _AccountScreenState extends State<AccountScreen> {
               ),
               ElevatedButton(
                 style: ButtonStyle(
-                    shadowColor: MaterialStateProperty.all<Color>(
-                        const Color.fromRGBO(0, 0, 0, 0)),
-                    shape: MaterialStateProperty.all(
-                      RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10),
+                      elevation: MaterialStateProperty.all(5),
+                      shape: MaterialStateProperty.all(
+                        RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20),
+                        ),
                       ),
-                    ),
-                    backgroundColor: MaterialStateProperty.all<Color>(
-                        const Color.fromRGBO(53, 207, 255, 1))),
+                      backgroundColor:
+                          MaterialStateProperty.all<Color>(Colors.white)),
                 onPressed: rename,
                 child: const SizedBox(
-                    height: 53,
+                    height: 34,
                     child: Center(
                         child: Text(
                       'Сохранить',
                       style: TextStyle(
                           color: Colors.black,
-                          fontSize: 22,
+                          fontSize: 20,
+                          fontFamily: 'montserrat',
                           fontWeight: FontWeight.bold),
                     ))),
               ),

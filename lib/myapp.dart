@@ -9,6 +9,8 @@ import 'package:hackathon/pages/login_screen.dart';
 import 'package:hackathon/pages/reset_password.dart';
 import 'package:hackathon/pages/signup_screen.dart';
 import 'package:hackathon/pages/verify_email_screen.dart';
+import 'package:hackathon/widgets/person_body.dart';
+import 'package:hackathon/widgets/searchbody.dart';
 
 class MyApp extends StatefulWidget {
   const MyApp({super.key});
@@ -20,6 +22,11 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
+    ErrorWidget.builder = (FlutterErrorDetails flutterErrorDetails) {
+      return Scaffold(
+          backgroundColor: Colors.white,
+          body: const Center(child: CircularProgressIndicator()));
+    };
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       routes: {
@@ -30,7 +37,7 @@ class _MyAppState extends State<MyApp> {
         '/signup': (context) => const SignUpScreen(),
         '/reset_password': (context) => const ResetPasswordScreen(),
         '/verify_email': (context) => const VerifyEmailScreen(),
-        '/create_screen':(context) => const CreateScreen()
+        '/create_screen':(context) => const CreateScreen(),
       },
       initialRoute: '/',
     );
